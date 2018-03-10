@@ -1,0 +1,35 @@
+Perform class-vs-class classification, i.e., pairwise binary classification. Please compare the performance of the classifications for different pair of classes, and analyze why some are good but some are not.
+
+Ran Project.py using 2 random classes with 500 as training set.
+misc.forsale and alt.atheism  99.4%
+comp.sys.ibm.pc.hardware and comp.os.ms-windows.misc 91.4%
+
+Ran Project.py using 2 preset classes with 500 as training set.
+talk.religion.misc and talk.politics.misc 89.2%
+rec.sport.baseball and soc.religion.christian 100.0%
+
+As you can see with the results above when the classes are relevant the success rate of the classification is lower and when the classess are very different the classification can reach 100%. When trying to classify like classes the difference in the words are small resulting in a mismatch.
+
+Perform tri-class classification (i.e. three class are involved). You can pick up at least five groups of tri-classes of data. Please compare the performance of the classifications for different group of classes, and analyze why some are good but some are not.
+
+Ran Project.py using 3 random classes with 500 as training set.
+comp.os.ms-windows.misc and rec.motorcycles and rec.sport.baseball 99.3%
+talk.politics.misc and rec.autos and comp.windows.x 98.5%
+sci.space and sci.electronics and talk.religion.misc 97.3%
+comp.windows.x and sci.med and comp.sys.ibm.pc.hardware 97.3%
+
+Ran Project.py using 3 preset classes with 500 as training set.
+talk.religion.misc and talk.politics.misc and talk.politics.mideast 87.7%
+
+The results are simular to the binary classification, but in this case due to the extra class the classification is a lot better. Such as in the 3nd random test we see that there are two similar classes and one different class and the resuling success rate is higher at 97.3%. When we force the classes to be very similar we can see that the success rate is now lowered to 87.7%. With both types of classification the more difference in the classes the better the classification success rate and the more similar the classes the lower the success rate. 
+
+
+
+
+
+
+
+
+
+
+
