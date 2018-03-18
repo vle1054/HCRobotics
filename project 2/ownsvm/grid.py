@@ -456,14 +456,8 @@ def find_parameters(dataset_pathname, options=''):
 		best_param['g'] = 2.0**best_g
 		best_cg += [2.0**best_g]
 	print('{0} {1}'.format(' '.join(map(str,best_cg)), best_rate))
-	
-	vec = []
-	for x in (map(str,best_cg)):
-		vec.append(x)
-	best_c = vec[0]
-	best_g = vec[1]
 
-	return best_rate, best_c, best_g
+	return best_rate, best_param
 
 
 if __name__ == '__main__':
