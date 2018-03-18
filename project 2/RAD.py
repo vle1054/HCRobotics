@@ -1,6 +1,5 @@
 import os, string, math
 import numpy as np
-import matplotlib.pyplot as plt
 
 path = os.getcwd().replace ('\\','/') + '/dataset/'
 
@@ -15,7 +14,6 @@ def RAD(folder ="test"):
 	folder_ = path + folder #Path to selected folder
 	files = os.listdir(folder_)
 	nbins = 5
-	
 	for file in files: #Scan through files
 		instance = np.loadtxt(folder_ +"/"+ file)
 		distance1 = np.zeros((int(len(instance)/20)))
@@ -58,23 +56,23 @@ def RAD(folder ="test"):
 		for x in (np.histogram(distance1,bins=nbins))[0]:
 			vec.append(x/i)
 		for x in (np.histogram(distance2,bins=nbins))[0]:
-			vec.append(x/i)	
+			vec.append(x/i)
 		for x in (np.histogram(distance3,bins=nbins))[0]:
-			vec.append(x/i)	
+			vec.append(x/i)
 		for x in (np.histogram(distance4,bins=nbins))[0]:
-			vec.append(x/i)	
+			vec.append(x/i)
 		for x in (np.histogram(distance5,bins=nbins))[0]:
-			vec.append(x/i)	
+			vec.append(x/i)
 		for x in (np.histogram(angle1,bins=nbins))[0]:
-			vec.append(x/i)	
+			vec.append(x/i)
 		for x in (np.histogram(angle2,bins=nbins))[0]:
-			vec.append(x/i)	
+			vec.append(x/i)
 		for x in (np.histogram(angle3,bins=nbins))[0]:
 			vec.append(x/i)
 		for x in (np.histogram(angle4,bins=nbins))[0]:
-			vec.append(x/i)	
+			vec.append(x/i)
 		for x in (np.histogram(angle5,bins=nbins))[0]:
-			vec.append(x/i)		
+			vec.append(x/i)
 
 		new_vec=[]
 		num=1
@@ -83,10 +81,10 @@ def RAD(folder ="test"):
 			new_vec.append(str(num)+":"+str(val))
 			num+=1
 
-		for val in new_vec:    
+		for val in new_vec:
 			outfile.write(" "+val)
 		outfile.write("\n")
-            
+
 choice = input("Would you like to run RAD on train(1) or test(2)?")
 
 if (int(choice)==1):
@@ -101,6 +99,13 @@ elif (int(choice)==2):
 	RAD("test")
 	outfile.close()
 	print("Completed RAD on the Test Data")
-	
-	
-	
+elif (int(choice)==3):
+	print("Running RAD on the both folders")
+	outfile = open("rad_d1", "w")
+	RAD("train")
+	outfile.close()
+	print("Completed RAD on the Training Data")
+	outfile = open("rad_d1.t", "a+")
+	RAD("test")
+	outfile.close()
+	print("Completed RAD on the Test Data")
