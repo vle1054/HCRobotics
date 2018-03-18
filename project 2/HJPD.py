@@ -99,7 +99,7 @@ def HJPD(folder ="test"):
 			vec.append(x/i)	
 
 		new_vec=[]
-		num=0
+		num=1
 		new_vec.append(file[1:3])
 		for val in vec:
 			new_vec.append(str(num)+":"+str(val))
