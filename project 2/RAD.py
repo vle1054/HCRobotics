@@ -1,6 +1,5 @@
 import os, string, math
 import numpy as np
-import matplotlib.pyplot as plt
 
 path = os.getcwd().replace ('\\','/') + '/dataset/'
 
