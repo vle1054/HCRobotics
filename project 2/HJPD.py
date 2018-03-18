@@ -122,3 +122,13 @@ elif (int(choice)==2):
 	HJPD("test")
 	outfile.close()
 	print("Completed HJPD on the Test Data")
+elif (int(choice)==3):
+	print("Running HJPD on the both folders")
+	outfile = open("hjpd_d1", "w")
+	HJPD("train")
+	outfile.close()
+	print("Completed HJPD on the Training Data")
+	outfile = open("hjpd_d1.t", "a+")
+	HJPD("test")
+	outfile.close()
+	print("Completed HJPD on the Test Data")
