@@ -6,11 +6,6 @@ from svmutil import *
 from subprocess import *
 from grid import *
 
-y, x = svm_read_problem('../heart_scale')
-m = svm_train(y[:200], x[:200], '-c 4')
-p_label, p_acc, p_val = svm_predict(y[200:], x[200:], m)
-
-
 if len(sys.argv) <= 1:
 	print('Usage: {0} training_file [testing_file]'.format(sys.argv[0]))
 	raise SystemExit
@@ -48,17 +43,10 @@ if len(sys.argv) > 2:
 
 cmd = '{0} -s "{1}" "{2}" > "{3}"'.format(svmscale_exe, range_file, train_pathname, scaled_file)
 print('Scaling training data...')
-Popen(cmd, shell = True, stdout = PIPE).communicate()	
-
- rate, param = find_parameters(dataset, options)
-
+Popen(cmd, shell = True, stdout = PIPE).communicate()
 
 print('Cross validation...')
 
 rate, param = find_parameters('../heart_scale',"")
 
 print(param)
-
-
-
-
