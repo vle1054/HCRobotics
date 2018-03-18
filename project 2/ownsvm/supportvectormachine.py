@@ -14,7 +14,7 @@ if len(sys.argv) <= 1:
 
 is_win32 = (sys.platform == 'win32')
 if not is_win32:
-	svmscale_exe = "./svm-scale"
+	svmscale_exe = "../svm-scale"
 	grid_py = "./grid.py"
 	gnuplot_exe = "/usr/bin/gnuplot"
 else:
@@ -47,6 +47,6 @@ Popen(cmd, shell = True, stdout = PIPE).communicate()
 
 print('Cross validation...')
 
-rate, param = find_parameters('../heart_scale',"")
+rate, bestc, bestg = find_parameters('../heart_scale',"")
 
-print(param)
+
