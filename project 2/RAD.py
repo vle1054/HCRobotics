@@ -13,7 +13,7 @@ def RAD(folder ="test"):
 	temp = np.zeros((6,3))
 	folder_ = path + folder #Path to selected folder
 	files = os.listdir(folder_)
-	nbins = 5
+	nbins = 30
 	for file in files: #Scan through files
 		instance = np.loadtxt(folder_ +"/"+ file)
 		distance1 = np.zeros((int(len(instance)/20)))
