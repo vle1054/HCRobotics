@@ -113,7 +113,7 @@ def HOD(folder ="test"):
 		joints.append(temp20)
 		
 		vec=[]
-		print(str(len(vec)))
+		
 		for jointi in joints:
 			xy=[]
 			yz=[]
@@ -143,14 +143,14 @@ def HOD(folder ="test"):
 			for x in (np.histogram(xz[(int(len(jointi)/2)):(int(len(jointi)))],bins=nbins))[0]:
 				vec.append(x/(len(jointi)/2))
 				
-		print(str(len(vec)))
+		
 		new_vec=[]
 		num=1
 		new_vec.append(file[1:3])
 		for val in vec:
 			new_vec.append(str(num)+":"+str(val))
 			num+=1
-		print(str(len(new_vec)))
+		
 		for val in new_vec:
 			outfile.write(" "+val)
 		outfile.write("\n")
@@ -159,23 +159,23 @@ choice = input("Would you like to run HOD on train(1) or test(2)?")
 
 if (int(choice)==1):
 	print("Running HOD on the Training Data")
-	outfile = open("hod_d1", "w")
+	outfile = open("hod_d2", "w")
 	HOD("train")
 	outfile.close()
 	print("Completed HOD on the Training Data")
 elif (int(choice)==2):
 	print("Running HOD on the Test Data")
-	outfile = open("hod_d1.t", "a+")
+	outfile = open("hod_d2.t", "a+")
 	HOD("test")
 	outfile.close()
 	print("Completed HOD on the Test Data")
 elif (int(choice)==3):
 	print("Running HOD on the both folders")
-	outfile = open("hod_d1", "w")
+	outfile = open("hod_d2", "w")
 	HOD("train")
 	outfile.close()
 	print("Completed HOD on the Training Data")
-	outfile = open("hod_d1.t", "a+")
+	outfile = open("hod_d2.t", "a+")
 	HOD("test")
 	outfile.close()
 	print("Completed HOD on the Test Data")
