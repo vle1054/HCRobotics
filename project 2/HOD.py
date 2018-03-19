@@ -2,7 +2,7 @@ import os, string, math
 import numpy as np
 
 path = os.getcwd().replace ('\\','/') + '/dataset/'
-
+nbins = 30
 def findangles(a, b):	
 	if(a[0]==b[0] ):
 		xy = 1.5707945
@@ -25,7 +25,7 @@ def findangles(a, b):
 def HOD(folder ="test"):
 	folder_ = path + folder #Path to selected folder
 	files = os.listdir(folder_)
-	nbins = 12
+	
 	for file in files: #Scan through files
 		instance = np.loadtxt(folder_ +"/"+ file)
 		joints=[]
@@ -171,11 +171,11 @@ elif (int(choice)==2):
 	print("Completed HOD on the Test Data")
 elif (int(choice)==3):
 	print("Running HOD on the both folders")
-	outfile = open("hod_d2", "w")
+	outfile = open("hod_d"+ str(nbins), "w")
 	HOD("train")
 	outfile.close()
 	print("Completed HOD on the Training Data")
-	outfile = open("hod_d2.t", "a+")
+	outfile = open("hod_d"+str(nbins)+".t", "a+")
 	HOD("test")
 	outfile.close()
 	print("Completed HOD on the Test Data")

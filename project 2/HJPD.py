@@ -2,13 +2,13 @@ import os, string, math
 import numpy as np
 
 path = os.getcwd().replace ('\\','/') + '/dataset/'
-
+nbins = 30
             
 def HJPD(folder ="test"):
 	temp = np.zeros((20,3))
 	folder_ = path + folder #Path to selected folder
 	files = os.listdir(folder_)
-	nbins = 5
+	
 	for file in files: #Scan through files
 		instance = np.loadtxt(folder_ +"/"+ file)
 		distance1 = np.zeros((int(len(instance)/20)))
@@ -124,11 +124,11 @@ elif (int(choice)==2):
 	print("Completed HJPD on the Test Data")
 elif (int(choice)==3):
 	print("Running HJPD on the both folders")
-	outfile = open("hjpd_d2", "w")
+	outfile = open("hjpd_d"+str(nbins), "w")
 	HJPD("train")
 	outfile.close()
 	print("Completed HJPD on the Training Data")
-	outfile = open("hjpd_d2.t", "a+")
+	outfile = open("hjpd_d"+str(nbins)+".t", "a+")
 	HJPD("test")
 	outfile.close()
 	print("Completed HJPD on the Test Data")

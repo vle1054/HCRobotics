@@ -1,0 +1,43 @@
+RAD
+5 2.0 2.0 54.1667 Accuracy = 60.4167% (29/48)
+10 0.03125 0.5 52.7778 Accuracy = 58.3333% (28/48) (classification)
+15 8.0 0.5 51.3889 Accuracy = 60.4167% (29/48) (classification)
+20 0.03125 0.0078125 50.0 Accuracy = 50% (24/48) (classification)
+30 2.0 0.5 55.5556 Accuracy = 62.5% (30/48) (classification)
+
+HJPD
+5 2.0 0.5 63.8889 Accuracy = 66.6667% (32/48) (classification)
+10 2.0 0.125 59.7222 Accuracy = 58.3333% (28/48) (classification)
+15 Accuracy = 62.5% (30/48) (classification)
+{'c': 0.03125, 'g': 0.5}
+58.3333
+
+20 Accuracy = 62.5% (30/48) (classification)
+{'c': 2.0, 'g': 0.5}
+55.5556
+
+30 Accuracy = 64.5833% (31/48) (classification)
+{'g': 0.5, 'c': 8.0}
+56.9444
+
+
+HOD
+5 Accuracy = 62.5% (30/48) (classification)
+{'c': 2.0, 'g': 0.125}
+81.9444
+
+10 Accuracy = 60.4167% (29/48) (classification)
+{'g': 0.125, 'c': 2.0}
+80.5556
+
+15 Accuracy = 75% (36/48) (classification)
+{'g': 0.03125, 'c': 8.0}
+79.1667
+
+20 Accuracy = 70.8333% (34/48) (classification)
+{'c': 8.0, 'g': 0.03125}
+76.3889
+
+30 Accuracy = 62.5% (30/48) (classification)
+{'c': 2.0, 'g': 0.125}
+76.3889

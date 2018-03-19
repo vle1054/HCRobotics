@@ -2,7 +2,7 @@ import os, string, math
 import numpy as np
 
 path = os.getcwd().replace ('\\','/') + '/dataset/'
-
+nbins = 30
 def angle_between(a, b, c):
     ba = a - b
     bc = c - b
@@ -13,8 +13,8 @@ def RAD(folder ="test"):
 	temp = np.zeros((6,3))
 	folder_ = path + folder #Path to selected folder
 	files = os.listdir(folder_)
-	nbins = 30
-	for file in files: #Scan through files
+
+	for file in files: #Scan through files		
 		instance = np.loadtxt(folder_ +"/"+ file)
 		distance1 = np.zeros((int(len(instance)/20)))
 		distance2 = np.zeros((int(len(instance)/20)))
@@ -101,11 +101,11 @@ elif (int(choice)==2):
 	print("Completed RAD on the Test Data")
 elif (int(choice)==3):
 	print("Running RAD on the both folders")
-	outfile = open("rad_d2", "w")
+	outfile = open("rad_d"+str(nbins), "w")
 	RAD("train")
 	outfile.close()
 	print("Completed RAD on the Training Data")
-	outfile = open("rad_d2.t", "a+")
+	outfile = open("rad_d"+ str(nbins)+".t", "a+")
 	RAD("test")
 	outfile.close()
 	print("Completed RAD on the Test Data")
